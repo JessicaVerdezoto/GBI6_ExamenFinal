@@ -93,6 +93,7 @@ df
 
 ```{r funcion_long}
 # Escriba aquí la función long_df
+
 long_df=function(df) {
   info=data.frame(id=1:1463)
 
