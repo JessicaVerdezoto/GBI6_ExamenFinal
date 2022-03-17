@@ -77,12 +77,16 @@ Para comprender la data de esta evaluación se requiere conocer el significado d
 
 ### [0.5 PUNTOS] 1.1 Defina su directorio de trabajo. 
 ```{r wd}
+setwd("C:/Users/INTEL/Documents/GitHub/GBI6_ExamenFinal")
+getwd() 
+
 
 ```
 
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
 ```{r data}
-df <- "cargue la data"
+df <- read.csv("C:/Users/INTEL/Documents/GitHub/GBI6_ExamenFinal/data/mRNA_expr.csv") 
+df
 
 ```
 
