@@ -80,7 +80,6 @@ Para comprender la data de esta evaluación se requiere conocer el significado d
 setwd("C:/Users/INTEL/Documents/GitHub/GBI6_ExamenFinal")
 getwd() 
 
-
 ```
 
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
@@ -94,7 +93,28 @@ df
 
 ```{r funcion_long}
 # Escriba aquí la función long_df
+long_df=function(df) {
+  info=data.frame(id=1:1463)
 
+  x=as.matrix(df)
+info=cbind(info,rep(x[,2],7))
+ 
+ info$id=NULL
+ names(info)=names(df[,c(2)])
+ Tipo=NULL
+
+ for (i in 3:9) {
+    Tipo=c(Tipo,x[,i])
+ }
+
+ n=names(df[,3:9])
+ N_name=c(rep(n[1],1463),rep(n[2],1463),rep(n[3],1463),rep(n[4],1463),rep(n[5],1463),rep(n[6],1463),rep(n[7],1463))
+
+ Op=cbind(N_name,Tipo,m)
+
+  names(Op)=c("gen", "expresion_level", "dataset")
+   return(Op)
+}
 
 ```
 
@@ -103,7 +123,10 @@ df
 La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.  
 ```{r df_long}
 # Genere la data df_long 
+df_long=long_df(df)
 
+
+head(df_long)
 ```
 
 ### [0.5 PUNTOS] 1.5 A partir de la data ```df_long```, genere un **Descriptive table** (librería ```sjPlot```) y guárdelo en el subdirectorio "result"  con el nombre **mRNA_expr_summary.doc** (previamente debe seleccionar las celdas adecuadas con funciones de la librería ```dplyr``` en conjunto con el operador ```%>%```). 
