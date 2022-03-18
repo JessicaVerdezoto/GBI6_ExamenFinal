@@ -167,22 +167,19 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 ```{r}
 # Escriba el código para crear la función tcga_boxplots
 library(tidyverse)
-
+library(ggplot2)
 tcga_boxplots=function(df1){
-  
   
   img=df1[,c(1,2)]
   names(img)=c("fac1","ind1")
   nom=as.character(levels(img[,1]))
 n=NULL
 
- 
- for (i in 1:length(levels(img$fac1))){
+  for (i in 1:length(levels(img$fac1))){
    
     j=ggplot(img%>%filter(fac1==nom[i]),aes(fac1,ind1))+geom_jitter()+geom_boxplot(alpha=0.3)+xlab("Tipo de Cancer")+ylab("gen")+
 theme_bw()+theme(legend.position='none')
     n[[i]]=j
-
 }
     
   return(n)
@@ -190,13 +187,15 @@ theme_bw()+theme(legend.position='none')
 head(df_long)
 
 ```
-
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
 ```{r list_boxplots, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 # Escriba el código para generar la lista. 
 
+list = unique(df_long)
+cancertype_boxplots=tcga_boxplots(df_long)
+li=length(cancertype_boxplots)
 
-
+cancertype_boxplots[[3]]
 ```
 ### [0.5 PUNTOS] 2.3 Guarde en el subdirectorio ```result``` el tercer plot de la lista ```cancertype_boxplots``` con el nombre ```boxplot3.png```. La definición de a figura debe ser de 300dpi. 
 ```{r boxplot3}
@@ -228,17 +227,15 @@ reg_gen_expression=function(df){
   x=df[which(df$gen==nom[nb[1]]),][,2]
   y=df[which(df$gen==nom[nb[2]]),][,2]
   dft=data.frame(x,y)
-nb=ggplot(data=dft,aes(x,y))+geom_point()+xlab(nom[nb[1]])+ylab(nom[nb[2]])
+m=ggplot(data=dft,aes(x,y))+geom_point()+xlab(nom[nb[1]])+ylab(nom[nb[2]])
  
    graf[[i]]=m
     
   }
   
   
-
   return(graf)
 }
-
 
 ```
 
