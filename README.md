@@ -16,18 +16,13 @@ Bioinformatica G01
 **Versión R-Studio.** 
 - R version 4.1.2 (2021-11-01) -- "Bird Hippie"
 
-***Paquetes usados***
-- Bio 
-- csv
-- matplotlib
-- os
-- pandas
-- numpy
-- scipy
-- warnings
-- Phylo
-- ipywidgets
+***Librerias usados***
+- library(tidyverse)
+-library(readr)
+-library(sjPlot)
+-library(dplyr)
+-library(sjmisc)
 
 **Explicación de la data utilizada**
  
- Para resolver los ejercicios propuestos en el Examen Final "ExamenFinal" de Bioinformatica se utilizó RStudio principalmente, en el ***Ejercicio 1*** que se resolvía 
+ Para resolver los ejercicios propuestos en el Examen Final "ExamenFinal" de Bioinformatica se utilizó RStudio principalmente, se agrego la data necesaria mRNA_expr.csv, se creo las carpetas data y resuts donde se guardaran los graficos obtenidos. Se observó de diferentes tipos de cáncer como el Carcinoma invasivo de mama (BRCA), cohorte pan riñón (KIPAN), Carcinoma renal de células renales(KIRP), Carcinoma de células escamosas de pulmón (LUSC), Citoadenocarcinoma seroso de ovario (OV), Carcinoma de endometrio del cuerpo uterino (UCEC), a cada uno de estos se les reviso el nevel de expresion qu presentaban en los genes establecidos.
