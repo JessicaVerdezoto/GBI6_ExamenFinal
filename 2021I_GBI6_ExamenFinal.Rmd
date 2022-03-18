@@ -14,7 +14,7 @@ output:
       smooth_scroll: yes
 ---
 
-![](./img/ikiam.png)
+![](./data/ikiam.png)
 
 **Bienvenidos al examen final de GBI6 - Bioinformática.**
 
