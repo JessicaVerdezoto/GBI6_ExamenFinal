@@ -195,13 +195,13 @@ list = unique(df_long)
 cancertype_boxplots=tcga_boxplots(df_long)
 li=length(cancertype_boxplots)
 
-cancertype_boxplots[[3]]
+cancertype_boxplots[]
 ```
 ### [0.5 PUNTOS] 2.3 Guarde en el subdirectorio ```result``` el tercer plot de la lista ```cancertype_boxplots``` con el nombre ```boxplot3.png```. La definición de a figura debe ser de 300dpi. 
 ```{r boxplot3}
 #Escriba el código para guardar la tercera figura de la lista. 
 
-cancertype_boxplots[3]
+cancertype_boxplots[]
 ggsave("C:/Users/INTEL/Documents/GitHub/GBI6_ExamenFinal/results/boxplot3.png", width = 6, height = 8, dpi = 300)
 ```
 
@@ -233,24 +233,24 @@ m=ggplot(data=dft,aes(x,y))+geom_point()+xlab(nom[nb[1]])+ylab(nom[nb[2]])
     
   }
   
-  
-  return(graf)
+    return(graf)
 }
 
 ```
 
-
 ### [0.5 PUNTOS] 2.5. Utilizando la función ```lapply()``` genera la lista ```reg_genplots``` con las gráficas para cada par de genes posibles. Recuerde que tiene 7 tipos de genes, se debe tener todas las combinaciones posibles por pares de genes (combinatoria sin repetición).
 ```{r list_regplots}
 # Escriba el código para generar la lista. 
-
+reg_genplots=reg_gen_expression(df_long)
+reg_genplots[[11]]
 ```
-
 
 ### [0.5 PUNTOS] 2.6. Guarde en el subdirectorio ```result``` el onceavo plot de la lista ```reg_genplots``` con el nombre ```regresion11.pdf```. La definición de a figura debe ser de 300dpi. 
 ```{r reg11}
 # Escriba el código para guardar el onceavo plot. 
-
+plo= reg_genplots[[11]]
+ggsave(filename = "results/regresion11.pdf", units="in",
+dpi = 300)
 ```
 
 
@@ -258,7 +258,13 @@ m=ggplot(data=dft,aes(x,y))+geom_point()+xlab(nom[nb[1]])+ylab(nom[nb[2]])
 
 ```{tex}
 # Esciba aquí su intepretación
-
+#El boxplot, diagrama de caja, sirve para sustentar la distribucion de los
+#datos analizados para tipos de cancer, las expresiones de genes no
+#resultaron con distribucion normal, es decir que los datos se encuentran 
+#de manera asimétrica con respecto al valor central. 
+#Por otro lado se osberva que los valores de expresion de los genes "PTEN" 
+#y "GAPDH", estan concentrados en un solo lugar, pero se visualiza pocos 
+#valores lejanos.
 ```
 
 ## 3. CONTROL DE LA VERSIÓN [1 PUNTO]. Se verficará en ell repositorio de GitHub. 
