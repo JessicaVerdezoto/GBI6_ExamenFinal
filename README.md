@@ -18,10 +18,10 @@ Bioinformatica G01
 
 ***Librerias usados***
 - library(tidyverse)
--library(readr)
--library(sjPlot)
--library(dplyr)
--library(sjmisc)
+- library(readr)
+- library(sjPlot)
+- library(dplyr)
+- library(sjmisc)
 
 **Explicación de la data utilizada**
  
